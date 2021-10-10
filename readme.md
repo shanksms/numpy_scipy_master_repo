@@ -1,5 +1,5 @@
 # Why Numpy array is fast?
-l = [1, 3, 4]
+## l = [1, 3, 4]
 Because of the way the Python interpreter works, 
 this is a very inefficient way to store these data points. 
 First, Python lists are always lists of objects, so that the above list  is not a list of integers,
