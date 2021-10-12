@@ -15,3 +15,14 @@ every element in the list by five. A standard Python approach would be to write 
  elements of the list and multiply each one by five. However, if your data is instead represented as an array, 
  you can multiply every element in the array by five in a single bound. Behind the scenes, the highly optimized NumPy 
  library is doing the iteration as fast as possible.
+# what does np.random.seed(0) do?
+it makes the output predictable
+[stackoverflow link](https://stackoverflow.com/questions/21494489/what-does-numpy-random-seed0-do)
+```python
+numpy.random.seed(0) ; numpy.random.rand(4)
+```
+array([ 0.55,  0.72,  0.6 ,  0.54])
+```python
+numpy.random.seed(0) ; numpy.random.rand(4)
+```
+array([ 0.55,  0.72,  0.6 ,  0.54])
