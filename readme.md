@@ -26,3 +26,43 @@ array([ 0.55,  0.72,  0.6 ,  0.54])
 numpy.random.seed(0) ; numpy.random.rand(4)
 ```
 array([ 0.55,  0.72,  0.6 ,  0.54])
+# Creating arrays in numpy
+## Creating Arrays from Python Lists
+```python
+np.array([1, 4, 2, 5, 3])
+```
+Out[8]: array([1, 4, 2, 5, 3])
+## Creating Arrays from Scratch
+```python
+np.zeros(10, dtype=int)
+```
+Out[12]: array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+```python
+np.ones((3, 5), dtype=float)
+Out[13]: array([[ 1.,  1.,  1.,  1.,  1.],
+                [ 1.,  1.,  1.,  1.,  1.],
+                [ 1.,  1.,  1.,  1.,  1.]])
+```
+
+```python
+np.full((3, 5), 3.14)
+Out[14]: array([[ 3.14,  3.14,  3.14,  3.14,  3.14],
+                [ 3.14,  3.14,  3.14,  3.14,  3.14],
+                [ 3.14,  3.14,  3.14,  3.14,  3.14]])
+```
+```python
+ np.arange(0, 20, 2)
+Out[15]: array([ 0,  2,  4,  6,  8, 10, 12, 14, 16, 18])
+```
+
+```python
+np.linspace(0, 1, 5)
+Out[16]: array([ 0.  ,  0.25,  0.5 ,  0.75,  1.  ])
+```
+
+```python
+np.eye(3)
+Out[20]: array([[ 1.,  0.,  0.],
+                [ 0.,  1.,  0.],
+                [ 0.,  0.,  1.]])
+```

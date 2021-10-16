@@ -11,6 +11,20 @@ pd.set_option('display.max_columns', 500)
 #plt.style.use('style/elegant.mplstyle')
 plt.style.use('ggplot')
 
+def reduce_xaxis_labels(ax, factor):
+    """Show only every ith label to prevent crowding on x-axis
+        e.g. factor = 2 would plot every second x-axis label,
+        starting at the first.
+
+    Parameters
+    ----------
+    ax : matplotlib plot axis to be adjusted
+    factor : int, factor to reduce the number of x-axis labels by
+    """
+    plt.setp(ax.xaxis.get_ticklabels(), visible=False)
+    for label in ax.xaxis.get_ticklabels()[factor-1::factor]:
+        label.set_visible(True)
+
 data_table = pd.read_csv('counts.txt', index_col=0)
 print(data_table.columns)
 print(data_table.iloc[:5, :5])
@@ -51,3 +65,12 @@ np.random.seed(seed=7) # Set seed so we will get consistent results
 # Randomly select 70 samples
 samples_index = np.random.choice(range(counts.shape[1]), size=70, replace=False)
 counts_subset = counts[:, samples_index]
+# Bar plot of expression counts by individual
+fig, ax = plt.subplots(figsize=(4.8, 2.4))
+
+with plt.style.context('ggplot'):
+    ax.boxplot(np.log(counts_subset + 1))
+    ax.set_xlabel("Individuals")
+    ax.set_ylabel("log gene expression counts")
+    reduce_xaxis_labels(ax, 5)
+    plt.show()
