@@ -66,3 +66,32 @@ Out[20]: array([[ 1.,  0.,  0.],
                 [ 0.,  1.,  0.],
                 [ 0.,  0.,  1.]])
 ```
+
+# Reshaping of Arrays
+Another useful type of operation is reshaping of arrays. 
+The most flexible way of doing this is with the reshape() method. 
+For example, if you want to put the numbers 1 through 9 in a 3×3 grid, you can do the following:
+
+```python
+grid = np.arange(1, 10).reshape((3, 3))
+print(grid)
+```
+Another common reshaping pattern is the conversion of a one-dimensional array into 
+a two-dimensional row or column matrix. You can do this with the reshape method, or more easily by making use of 
+the newaxis keyword within a slice operation:
+```python
+x = np.array([1, 2, 3])
+# row vector via reshape
+x.reshape((1, 3))
+Out[39]: array([[1, 2, 3]])
+```
+# some code samples
+```python
+import numpy as np
+
+a = np.array([1, 2, 3, 4, 5, 6])
+print(a.shape)
+print(a.reshape((6, 1)).ndim)
+print(a.reshape((1, 6)).ndim)
+print(a.reshape((6, )).shape)
+```
